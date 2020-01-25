@@ -1,41 +1,88 @@
-body{
-    font-size: 16px;
-    text-align: center;
-    background-image: url(background.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: 100%;
-    background-repeat: no-repeat;
-
+@font-face{
+    font-family: Courgette-Regular;
+    src: url(font/Courgette-Regular.ttf);
 }
+
+@font-face{
+    font-family: Acme;
+    src: url(font/acme.ttf);
+}
+
+html {
+    height: 100%;
+}
+
+body{
+    background-image: url(baseimages/background.jpg);
+    height: 97vh;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 
 .view {
-    background-color: rgba(70, 63, 63, 0.514);
-    margin: 3em;
-    height: 60em;
-    border-radius: 25px;
-    overflow-y: auto;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    height: 95%;
+    font-family: 'Courgette-Regular', cursive;
+    min-width: 70em;
 }
 
-.view .art{
-    border-radius: 10%;
-    max-height: 30em;
-    width: auto;
-    height:auto;
-    margin:1em;
+.art-view{
+    font-family: 'Acme', sans-serif;
+
+    text-align: center;
+    background-color: rgba(34, 34, 34, 0.705);
+    margin-left: 3em;
+    margin-right: 3em;
+    color: whitesmoke;
+    font-size: 1.3em;
+    height: 90%;
+    width: 90%;
+}
+
+#gallerymain{
+    size: 100%;
+    text-align:center;
+}
+
+.preview-image {
+    max-height: 8em;
+    width:auto;
+}
+
+.scrollable{
+    overflow-y: scroll;
+    scrollbar-color: rgba(22, 22, 22, 0.664) transparent;
+    scrollbar-width: thin;
+}
+
+.galleria {
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.63)
 }
 
 .mainnav {
-    background-color: rgba(15, 10, 10, 0.274);
+    font-size: 100%;
     overflow: hidden;
-    margin: 5em;
+    white-space: nowrap;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    min-width: 70em;
+    width: 95%;
 }
 
 .mainnav a {
     float: left;
-    color: #f2f2f2;
+    color: whitesmoke;
     text-align: center;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
@@ -43,41 +90,126 @@ body{
     font-size: 1.2em;
     width: 33.33%;
     position: relative;
+    background-image: radial-gradient(rgba(2, 2, 2, 0.726) 30%, rgba(0, 0, 255, 0) 70%);
 }
 
 .mainnav a:hover {
-    background-color: red;
-    color: green;
+    transition: .4s;
+    text-indent: 5%;
+    color: rgb(0, 141, 223);
 }
 
 .mainnav a.active {
-    background-color: gray;
-    color: pink;
+    color: rgb(145, 9, 236);
+
 }
 
 .artnav {
-    background-color: rgba(15, 10, 10, 0.274);
+    position: center;
     overflow: hidden;
-    margin: 7em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    margin-top:1em;
+    min-width: 70em;
+    width: 95%;
+
 }
 
 .artnav a {
+    white-space: nowrap;
+    padding-top: .6em;
+    padding-bottom: .6em;
     float: left;
+    border-radius: 25px;
     color: #f2f2f2;
-    text-align: center;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
     text-decoration: none;
-    font-size: 1.2em;
-    width: 16.66%;
+    text-align: center;
+    font-size: 100%;
+    min-width: 16.66%;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 25%, rgba(0,0,0,0.5965919815191701) 50%, rgba(0,0,0,0.45) 75%, rgba(0,0,0,0) 100%);
 }
 
 .artnav a:hover {
-    background-color: red;
-    color: green;
+    transition: .4s;
+    color: rgb(0, 141, 223);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 25%, rgba(255,255,255,0.5965919815191701) 50%, rgba(255,254,254,0.45) 75%, rgba(255,255,255,0) 100%);
 }
 
 .artnav a.active {
-    background-color: blue;
-    color: pink;
+    color: rgb(145, 9, 236);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 25%, rgba(255,255,255,0.5965919815191701) 50%, rgba(255,254,254,0.45) 75%, rgba(255,255,255,0) 100%);
+    /*background-color: rgba(75, 75, 77, 0.968);*/
 }
+
+.contact{
+    display: grid;
+    grid-template-columns : repeat(2, 1fr);
+    grid-column-gap: 1em;
+}
+
+input, select, textarea, button{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 100%;
+}
+
+form{
+    font-size: .9em;
+    margin: 1em;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.39);
+    text-align: left;
+    display  : grid;
+    grid-template-columns : repeat(1, 1fr);
+    grid-row-gap: .2em;
+
+}
+
+#name{
+    background: rgba(255, 255, 255, 0.295);
+    border: none;
+    width: 15em;
+    font-size: .7em;
+}
+
+#email{
+    background: rgba(255, 255, 255, 0.295);
+    border: none;
+    width: 15em;
+    font-size: .7em;
+}
+
+#comment{
+   
+    border: none;
+    background-color: rgba(255, 255, 255, 0.295);
+    font-size: .7em;
+}
+
+#submit {
+    width: 20%;
+    text-align :center;
+}
+
+#jslink {
+    color: rgb(199, 199, 199);
+}
+
+#portrait {
+    margin: 2.5em;
+    width: 10em;
+    height: 14em;
+}
+
+#active {
+    padding-top:4.5%;
+    display: grid;
+    grid-auto-columns: 7em;;
+}
+
+#active a{
+    text-decoration: none;
+    color: white;
+    font-size: .8em;
+}
+
